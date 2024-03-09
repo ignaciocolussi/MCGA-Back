@@ -1,6 +1,7 @@
 // Importo librerias
 import express, { Express, Request, Response, Router } from "express";
 import cors from "cors";
+import TagsRouter from "./routes/tags";
 
 var app = express();
 
@@ -10,6 +11,8 @@ app.use(express.json());
 // Defino cors
 app.use(cors<Request>());
 
+// Defino las rutas
+app.use("/tags", TagsRouter);
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello World!");
 });
