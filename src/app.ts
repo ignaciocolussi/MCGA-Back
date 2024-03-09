@@ -2,6 +2,7 @@
 import express, { Express, Request, Response, Router } from "express";
 import cors from "cors";
 import TagsRouter from "./routes/tags";
+import NotesRouter from "./routes/notes";
 
 var app = express();
 
@@ -13,6 +14,7 @@ app.use(cors<Request>());
 
 // Defino las rutas
 app.use("/tags", TagsRouter);
+app.use("/notes", NotesRouter);
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello World!");
 });
